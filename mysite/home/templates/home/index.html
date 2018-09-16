@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<style>
+			.container{
+				margin-top: 12%;
+				margin-left: 35%;
+			}
+			#logo{
+				margin-left: 7%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+            {% load staticfiles %}
+			<img id="logo" src="{% static 'media/log.PNG' %}">
+			<form action="/serp/" method="post">
+                {% csrf_token %}
+		  		<div class="row">
+		    		<div class="col-xs-6 col-md-4">
+		      			<div class="input-group">
+		        			<input type="text" name="query" class="form-control" placeholder="Search" id="txtSearch"/>
+		        			<div class="input-group-btn">
+		          				<button class="btn btn-primary" type="submit">
+		            				<span class="glyphicon glyphicon-search"></span>
+		          				</button>
+		        			</div>
+		      			</div>
+		    		</div>
+		  		</div>
+			</form>
+		</div>
+	</body>
+</html>

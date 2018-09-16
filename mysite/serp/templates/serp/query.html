@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+    {% csrf_token %}
+    <ul>
+        {% for l in link %}
+            <li><a href="{{ l|safe }}">{{ l|safe }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
